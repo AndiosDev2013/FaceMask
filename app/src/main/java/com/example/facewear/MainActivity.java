@@ -5,6 +5,8 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.ar.core.ArCoreApk;
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
     surfaceView = findViewById(R.id.surfaceview);
     displayRotationHelper = new DisplayRotationHelper(/*context=*/ this);
 
@@ -70,6 +73,23 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
     surfaceView.setWillNotDraw(false);
 
     installRequested = false;
+  }
+
+  public void onRadioButtonClicked(View view) {
+    switch (view.getId()) {
+      case R.id.rad0:
+        virtualObject.currTexIndex = 0;
+        break;
+      case R.id.rad1:
+        virtualObject.currTexIndex = 1;
+        break;
+      case R.id.rad2:
+        virtualObject.currTexIndex = 2;
+        break;
+      case R.id.rad3:
+        virtualObject.currTexIndex = 3;
+        break;
+    }
   }
 
   @Override

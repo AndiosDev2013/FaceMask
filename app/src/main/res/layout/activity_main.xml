@@ -10,6 +10,7 @@
         android:layout_gravity="top" />
 
     <RadioGroup
+        android:id="@+id/radgrp_mask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -20,24 +21,29 @@
             android:id="@+id/rad0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"
             android:text="None" />
 
         <RadioButton
             android:id="@+id/rad1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="Glasses" />
 
         <RadioButton
             android:id="@+id/rad2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="Mask" />
 
         <RadioButton
             android:id="@+id/rad3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="Glasses &amp; Mask" />
     </RadioGroup>
 
