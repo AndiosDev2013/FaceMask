@@ -1,11 +1,13 @@
-.gradle
-/local.properties
-/.idea
-.DS_Store
-/build
-/captures
-*.swp
+# Android Studio configuration.
 *.iml
-.externalNativeBuild
-.cxx
+.idea/
+
+# Gradle configuration.
+.gradle/
+build/
+
+# User configuration.
 local.properties
+
+# OS configurations.
+.DS_Store

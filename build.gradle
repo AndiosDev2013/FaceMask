@@ -2,48 +2,24 @@
 
 buildscript {
     repositories {
-        mavenCentral()
-        jcenter()
         google()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
-        classpath "com.github.dcendents:android-maven-gradle-plugin:1.4.1"
+        classpath 'com.android.tools.build:gradle:3.3.0'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
     }
 }
+
 allprojects {
-    allprojects {
-        repositories {
-            jcenter()
-            maven {
-                url "https://maven.google.com" // Google's Maven repository
-            }
-        }
+    repositories {
+        google()
+        jcenter()
+        mavenLocal()
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-ext {
-    groupName = 'com.example.facewear'
-    artifactName = 'FaceWear'
-    artifactDescription = 'Test project for Vurse'
-    artifactLabels = ['dlib', 'android']
-
-    // Version control
-    versionMajor = 1
-    versionMinor = 0
-    versionPatch = 0
-    releaseVersionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
-    releaseVersionName = "${versionMajor}.${versionMinor}.${versionPatch}"
-
-    minSdkVersion = 14
-    targetSdkVersion = 25
-    androidCompileSdkVersion = 27
-    androidBuildToolsVersion = '27.0.0'
-    androidSupportSdkVersion = '25.3.1'
 }
